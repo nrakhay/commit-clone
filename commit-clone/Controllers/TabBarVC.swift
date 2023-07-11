@@ -7,9 +7,8 @@
 
 import UIKit
 
-class TabBarVC: UIViewController, Coordinating {
+class TabBarVC: UITabBarController, Coordinating {
     var coordinator: Coordinator?
-    private let tabBarVC = UITabBarController()
     private let images = [("square.grid.3x3", "square.grid.3x3.fill"),
                           ("square", "square.fill"),
                           ("gearshape", "gearshape.fill")]
@@ -19,18 +18,14 @@ class TabBarVC: UIViewController, Coordinating {
         view.backgroundColor = UIColor(named: "background-color")
         
         configureTabBar()
-        self.tabBarVC.delegate = self
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        present(tabBarVC, animated: false)
+        self.delegate = self
     }
     
     private func configureTabBar() {
-        tabBarVC.tabBar.tintColor = .white
-        tabBarVC.tabBar.unselectedItemTintColor = .lightGray
-        tabBarVC.tabBar.backgroundColor = UIColor(named: "background-color")
-        tabBarVC.modalPresentationStyle = .fullScreen
+        tabBar.tintColor = .white
+        tabBar.unselectedItemTintColor = .lightGray
+        tabBar.backgroundColor = UIColor(named: "background-color")
+        modalPresentationStyle = .fullScreen
         
         let systemFontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16.0)]
         UITabBarItem.appearance().setTitleTextAttributes(systemFontAttributes, for: .normal)
@@ -54,11 +49,11 @@ class TabBarVC: UIViewController, Coordinating {
         settingsVC.title = "settings"
 
         
-        tabBarVC.setViewControllers([allDaysVC, todayVC, settingsVC], animated: false)
+        self.setViewControllers([allDaysVC, todayVC, settingsVC], animated: false)
     }
     
     func setImage(to index: Int, fill: Bool) {
-        guard let items = tabBarVC.tabBar.items else {
+        guard let items = tabBar.items else {
             return
         }
         
