@@ -7,39 +7,44 @@
 
 import UIKit
 
-class AllDaysVC: UIViewController {
-//    lazy var allDaysView = AllDaysView()
-    
-//    override func loadView() {
-//        self.view = allDaysView
-//    }
-    
+class AllDaysVC: GenericVC<AllDaysView> {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupLeftBarButton()
-        setupRightBarButton()
-    }
     
-    private func setupLeftBarButton() {
-        let leftBarButton = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.circle"), style: .plain, target: self, action: #selector(handleLeftBarButton))
-        leftBarButton.tintColor = .white
-    
-        self.tabBarController?.navigationItem.leftBarButtonItem = leftBarButton
-    }
-    
-    private func setupRightBarButton() {
-        let rightBarButton = UIBarButtonItem(image: UIImage(systemName: "plus.circle"), style: .plain, target: self, action: #selector(handleRightBarButton))
-        rightBarButton.tintColor = .white
-    
-        self.tabBarController?.navigationItem.rightBarButtonItem = rightBarButton
-    }
-    
-    @objc private func handleLeftBarButton() {
+        setupBarButtons()
+        rootView.collectionView.dataSource = self
+        rootView.collectionView.delegate = self
         
     }
-    
-    @objc private func handleRightBarButton() {
+
+    private func setupBarButtons() {
+        self.tabBarController?.navigationItem.leftBarButtonItem = rootView.leftBarButton
+        self.tabBarController?.navigationItem.rightBarButtonItem = rootView.rightBarButton
         
+        rootView.leftBarButton.target = self
+        rootView.leftBarButton.action = #selector(allTasksButtonTapped)
+        
+        rootView.rightBarButton.target = self
+        rootView.rightBarButton.action = #selector(addTaskButtonTapped)
+    }
+    
+    @objc private func allTasksButtonTapped() {
+        
+    }
+    
+    @objc private func addTaskButtonTapped() {
+        
+    }
+}
+
+extension AllDaysVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        100
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GridCVCell.identifier, for: indexPath)
+        
+        return cell
     }
 }

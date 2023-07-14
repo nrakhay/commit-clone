@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class TabBarVC: UITabBarController, Coordinating {
     var coordinator: Coordinator?
@@ -42,7 +43,8 @@ class TabBarVC: UITabBarController, Coordinating {
     
     private func addViewControllersToTabBar() {
         let allDaysVC = AllDaysVC()
-        allDaysVC.title = "all days"
+//        let allDaysVC = UIHostingController(rootView: SwiftUIView())
+        allDaysVC.title = "all"
         let todayVC = TodayVC()
         todayVC.title = "today"
         let settingsVC = SettingsVC()

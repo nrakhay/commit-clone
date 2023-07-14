@@ -8,7 +8,8 @@
 import UIKit
 
 enum Event {
-    
+    case allTasksTapped
+    case addTaskTapped
 }
 
 protocol Coordinator: AnyObject {
