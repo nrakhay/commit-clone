@@ -24,14 +24,14 @@ class AllDaysVC: GenericVC<AllDaysView> & Coordinating {
         self.tabBarController?.navigationItem.rightBarButtonItem = rootView.rightBarButton
         
         rootView.leftBarButton.target = self
-        rootView.leftBarButton.action = #selector(allTasksButtonTapped)
+        rootView.leftBarButton.action = #selector(allGoalsTapped)
         
         rootView.rightBarButton.target = self
-        rootView.rightBarButton.action = #selector(addTaskButtonTapped)
+        rootView.rightBarButton.action = #selector(addGoalTapped)
     }
     
     @objc private func allGoalsTapped() {
-        
+        coordinator?.eventOccured(with: .allGoalsTapped)
     }
     
     @objc private func addGoalTapped() {

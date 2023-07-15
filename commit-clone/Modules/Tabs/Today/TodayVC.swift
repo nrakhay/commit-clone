@@ -7,8 +7,9 @@
 
 import UIKit
 
-class TodayVC: UIViewController {
-
+class TodayVC: GenericVC<TodayView>, Coordinating {
+    var coordinator: Coordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "background-color")

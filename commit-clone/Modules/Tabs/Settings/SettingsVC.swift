@@ -7,8 +7,9 @@
 
 import UIKit
 
-class SettingsVC: UIViewController {
-
+class SettingsVC: GenericVC<SettingsView>, Coordinating {
+    var coordinator: Coordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "background-color")

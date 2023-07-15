@@ -27,8 +27,13 @@ class MainCoordinator: Coordinator {
     func goToHome() {
         let tabBarCoordinator = TabBarCoordinator.init(navigationController: navController)
         children.removeAll()
+        children.append(tabBarCoordinator)
         tabBarCoordinator.parentCoordinator = self
         tabBarCoordinator.start()
+    }
+    
+    func eventOccured(with type: Event) {
+        return
     }
     
     func popVC() {

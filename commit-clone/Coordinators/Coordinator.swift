@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum Event {
+    case allGoalsTapped
+    case addGoalTapped
+    case someOtherCase
+}
+
 protocol Coordinator: AnyObject {
     var parentCoordinator: Coordinator? { get set }
     var children: [Coordinator] { get set }
@@ -14,6 +20,7 @@ protocol Coordinator: AnyObject {
     
     func start()
     func popVC()
+    func eventOccured(with type: Event)
 }
 
 protocol Coordinating {

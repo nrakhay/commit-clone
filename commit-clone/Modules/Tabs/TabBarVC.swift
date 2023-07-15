@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 
 class TabBarVC: UITabBarController, Coordinating {
     var coordinator: Coordinator?
@@ -22,7 +21,7 @@ class TabBarVC: UITabBarController, Coordinating {
         self.delegate = self
     }
     
-    private func configureTabBar() {
+    func configureTabBar() {
         tabBar.tintColor = .white
         tabBar.unselectedItemTintColor = .lightGray
         tabBar.backgroundColor = UIColor(named: "background-color")
@@ -30,8 +29,10 @@ class TabBarVC: UITabBarController, Coordinating {
         
         let systemFontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16.0)]
         UITabBarItem.appearance().setTitleTextAttributes(systemFontAttributes, for: .normal)
-        
-        addViewControllersToTabBar()
+    }
+    
+    func setupVC(with viewControllers: [UIViewController]) {
+        setViewControllers(viewControllers, animated: true)
         setImagesToTabBar()
     }
     
@@ -40,20 +41,7 @@ class TabBarVC: UITabBarController, Coordinating {
         setImage(to: 1, fill: false)
         setImage(to: 2, fill: false)
     }
-    
-    private func addViewControllersToTabBar() {
-        let allDaysVC = AllDaysVC()
-//        let allDaysVC = UIHostingController(rootView: SwiftUIView())
-        allDaysVC.title = "all"
-        let todayVC = TodayVC()
-        todayVC.title = "today"
-        let settingsVC = SettingsVC()
-        settingsVC.title = "settings"
 
-        
-        self.setViewControllers([allDaysVC, todayVC, settingsVC], animated: false)
-    }
-    
     func setImage(to index: Int, fill: Bool) {
         guard let items = tabBar.items else {
             return
