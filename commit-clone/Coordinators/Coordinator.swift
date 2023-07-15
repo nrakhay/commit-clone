@@ -7,17 +7,13 @@
 
 import UIKit
 
-enum Event {
-    case allTasksTapped
-    case addTaskTapped
-}
-
 protocol Coordinator: AnyObject {
-    var navController: UINavigationController? { get }
+    var parentCoordinator: Coordinator? { get set }
+    var children: [Coordinator] { get set }
+    var navController: UINavigationController { get }
     
     func start()
     func popVC()
-    func eventOccured(with type: Event)
 }
 
 protocol Coordinating {

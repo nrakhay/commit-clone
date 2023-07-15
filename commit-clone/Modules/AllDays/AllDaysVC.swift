@@ -7,7 +7,9 @@
 
 import UIKit
 
-class AllDaysVC: GenericVC<AllDaysView> {
+class AllDaysVC: GenericVC<AllDaysView> & Coordinating {
+    var coordinator: Coordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -28,11 +30,11 @@ class AllDaysVC: GenericVC<AllDaysView> {
         rootView.rightBarButton.action = #selector(addTaskButtonTapped)
     }
     
-    @objc private func allTasksButtonTapped() {
+    @objc private func allGoalsTapped() {
         
     }
     
-    @objc private func addTaskButtonTapped() {
+    @objc private func addGoalTapped() {
         
     }
 }
