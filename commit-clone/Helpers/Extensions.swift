@@ -72,3 +72,15 @@ extension UIView {
         top + height
     }
 }
+
+extension UILabel {
+    func setLineSpacing(for str: String, with space: CGFloat) {
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineSpacing = space
+        
+        let attributedString = NSMutableAttributedString(string: str)
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraph, range: NSMakeRange(0, attributedString.length))
+        
+        self.attributedText = attributedString
+    }
+}

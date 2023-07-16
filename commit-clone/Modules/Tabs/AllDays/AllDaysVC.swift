@@ -14,9 +14,9 @@ class AllDaysVC: GenericVC<AllDaysView> & Coordinating {
         super.viewDidLoad()
     
         setupBarButtons()
-        rootView.collectionView.isUserInteractionEnabled = true
         rootView.collectionView.dataSource = self
         rootView.collectionView.delegate = self
+        
     }
 
     private func setupBarButtons() {

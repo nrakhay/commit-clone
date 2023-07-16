@@ -10,7 +10,7 @@ import UIKit
 class SingleDayView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.addSubviews(header)
+        self.addSubviews(header, quoteLabel, authorLabel)
         self.backgroundColor = UIColor(named: "background-color")
     }
     
@@ -20,6 +20,8 @@ class SingleDayView: UIView {
     
     override func layoutSubviews() {
         header.anchor(top: self.safeAreaLayoutGuide.topAnchor, left: self.leftAnchor, paddingLeft: 15)
+        quoteLabel.anchor(top: header.bottomAnchor, left: self.leftAnchor, right: self.rightAnchor, paddingTop: 5, paddingLeft: 15, paddingRight: 25)
+        authorLabel.anchor(top: quoteLabel.bottomAnchor, left: self.leftAnchor, right: self.rightAnchor, paddingTop: 5, paddingLeft: 15, paddingRight: 25)
     }
     
     let header: UILabel = {
@@ -30,9 +32,32 @@ class SingleDayView: UIView {
         return label
     }()
     
+    let quoteLabel: UILabel = {
+        let label = UILabel()
+        
+        label.font = label.font.withSize(18)
+        label.textColor = UIColor(named: "quote-color")
+        label.numberOfLines = 0
+
+        label.setLineSpacing(for: "Let today be the day you give up who you've been for who you can become", with: 4.0)
+
+        return label
+    }()
+    
+    let authorLabel: UILabel = {
+        let label = UILabel()
+        label.text = "- HORACE MANN"
+        label.font = label.font.withSize(14)
+        label.textColor = UIColor(named: "author-color")
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
     let leftBarButton: UIBarButtonItem = {
         let button = UIBarButtonItem(image: UIImage(systemName: "arrow.backward.circle"), style: .plain, target: nil, action: nil)
         button.tintColor = .white
+        button.width = 20
         return button
     }()
 }
