@@ -45,15 +45,17 @@ class TabBarCoordinator: Coordinator {
     func eventOccured(with type: Event) {
         switch type {
         case .allGoalsTapped:
-            var vc: UIViewController & Coordinating = AllGoalsVC()
+            var vc: UIViewController & Coordinating = AllHabitsVC()
             vc.coordinator = self
             navController.pushViewController(vc, animated: true)
         case .addGoalTapped:
-            var vc: UIViewController & Coordinating = AddGoalVC()
+            var vc: UIViewController & Coordinating = AddHabitVC()
             vc.coordinator = self
             navController.pushViewController(vc, animated: true)
-        default:
-            break
+        case .specificDayTapped:
+            var vc: UIViewController & Coordinating = SingleDayVC()
+            vc.coordinator = self
+            navController.pushViewController(vc, animated: true)
         }
     }
 }

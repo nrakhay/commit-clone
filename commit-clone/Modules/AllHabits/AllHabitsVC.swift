@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AllGoalsVC: GenericVC<AllGoalsView> & Coordinating {
+class AllHabitsVC: GenericVC<AllHabitsView> & Coordinating {
     var coordinator: Coordinator?
     
     override func viewDidLoad() {
@@ -17,8 +17,6 @@ class AllGoalsVC: GenericVC<AllGoalsView> & Coordinating {
     }
     
     private func setupBarButtons() {
-//        self.tabBarController?.navigationItem.leftBarButtonItem = rootView.leftBarButton
-//        self.tabBarController?.navigationItem.rightBarButtonItem = rootView.rightBarButton
         navigationItem.leftBarButtonItem = rootView.leftBarButton
         navigationItem.rightBarButtonItem = rootView.rightBarButton
         

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddGoalVC: GenericVC<AddGoalView> & Coordinating {
+class AddHabitVC: GenericVC<AddHabitView> & Coordinating {
     var coordinator: Coordinator?
 
     override func viewDidLoad() {

@@ -1,18 +1,17 @@
 //
-//  AllGoalsView.swift
+//  SingleDayView.swift
 //  commit-clone
 //
-//  Created by Nurali Rakhay on 15.07.2023.
+//  Created by Nurali Rakhay on 16.07.2023.
 //
 
 import UIKit
 
-class AllGoalsView: UIView {
-
+class SingleDayView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         self.addSubviews(header)
-        setupView()
+        self.backgroundColor = UIColor(named: "background-color")
     }
     
     required init?(coder: NSCoder) {
@@ -25,7 +24,7 @@ class AllGoalsView: UIView {
     
     let header: UILabel = {
         let label = UILabel()
-        label.text = "habits"
+        label.text = "jun 22"
         label.font = UIFont(name: "CalSans-SemiBold", size: 42)
         label.textColor = .white
         return label
@@ -36,15 +35,4 @@ class AllGoalsView: UIView {
         button.tintColor = .white
         return button
     }()
-    
-    let rightBarButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: UIImage(systemName: "pencil.circle"), style: .plain, target: nil, action: nil)
-        button.tintColor = .white
-        return button
-    }()
-    
-    private func setupView() {
-        self.backgroundColor = UIColor(named: "background-color")
-    }
-    
 }

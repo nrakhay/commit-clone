@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddGoalView: UIView {
+class AddHabitView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

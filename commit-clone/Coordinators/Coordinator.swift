@@ -10,7 +10,7 @@ import UIKit
 enum Event {
     case allGoalsTapped
     case addGoalTapped
-    case someOtherCase
+    case specificDayTapped
 }
 
 protocol Coordinator: AnyObject {

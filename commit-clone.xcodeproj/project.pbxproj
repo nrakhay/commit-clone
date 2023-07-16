@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		5C3B5C322A61497900D4086C /* GenericVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B5C312A61497900D4086C /* GenericVC.swift */; };
 		5C3B5C352A61801B00D4086C /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B5C342A61801B00D4086C /* TabBarCoordinator.swift */; };
-		5C3B5C412A62C4BA00D4086C /* AllGoalsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B5C402A62C4BA00D4086C /* AllGoalsVC.swift */; };
-		5C3B5C432A62C4C500D4086C /* AllGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B5C422A62C4C500D4086C /* AllGoalsView.swift */; };
-		5C3B5C462A62C7AC00D4086C /* AddGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B5C452A62C7AC00D4086C /* AddGoalView.swift */; };
-		5C3B5C4A2A62C7C300D4086C /* AddGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B5C492A62C7C300D4086C /* AddGoalVC.swift */; };
+		5C3B5C412A62C4BA00D4086C /* AllHabitsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B5C402A62C4BA00D4086C /* AllHabitsVC.swift */; };
+		5C3B5C432A62C4C500D4086C /* AllHabitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B5C422A62C4C500D4086C /* AllHabitsView.swift */; };
+		5C3B5C462A62C7AC00D4086C /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B5C452A62C7AC00D4086C /* AddHabitView.swift */; };
+		5C3B5C4A2A62C7C300D4086C /* AddHabitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B5C492A62C7C300D4086C /* AddHabitVC.swift */; };
 		5C5287F22A5D55A90091F3C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5287F12A5D55A90091F3C4 /* AppDelegate.swift */; };
 		5C5287F42A5D55A90091F3C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5287F32A5D55A90091F3C4 /* SceneDelegate.swift */; };
 		5C5287FB2A5D55AA0091F3C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C5287FA2A5D55AA0091F3C4 /* Assets.xcassets */; };
@@ -30,15 +30,17 @@
 		5C52883C2A5DC6BD0091F3C4 /* CalSans-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5C52883B2A5DC6BD0091F3C4 /* CalSans-SemiBold.otf */; };
 		5C52883E2A5E8A840091F3C4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C52883D2A5E8A840091F3C4 /* Extensions.swift */; };
 		5C5288402A5E93460091F3C4 /* GridCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C52883F2A5E93460091F3C4 /* GridCVCell.swift */; };
+		5CCA66722A641307007A76B6 /* SingleDayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA66712A641307007A76B6 /* SingleDayVC.swift */; };
+		5CCA66742A641311007A76B6 /* SingleDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA66732A641311007A76B6 /* SingleDayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5C3B5C312A61497900D4086C /* GenericVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericVC.swift; sourceTree = "<group>"; };
 		5C3B5C342A61801B00D4086C /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
-		5C3B5C402A62C4BA00D4086C /* AllGoalsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsVC.swift; sourceTree = "<group>"; };
-		5C3B5C422A62C4C500D4086C /* AllGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsView.swift; sourceTree = "<group>"; };
-		5C3B5C452A62C7AC00D4086C /* AddGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalView.swift; sourceTree = "<group>"; };
-		5C3B5C492A62C7C300D4086C /* AddGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalVC.swift; sourceTree = "<group>"; };
+		5C3B5C402A62C4BA00D4086C /* AllHabitsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHabitsVC.swift; sourceTree = "<group>"; };
+		5C3B5C422A62C4C500D4086C /* AllHabitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHabitsView.swift; sourceTree = "<group>"; };
+		5C3B5C452A62C7AC00D4086C /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
+		5C3B5C492A62C7C300D4086C /* AddHabitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitVC.swift; sourceTree = "<group>"; };
 		5C5287EE2A5D55A90091F3C4 /* commit-clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "commit-clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5287F12A5D55A90091F3C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C5287F32A5D55A90091F3C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,8 @@
 		5C52883B2A5DC6BD0091F3C4 /* CalSans-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CalSans-SemiBold.otf"; sourceTree = "<group>"; };
 		5C52883D2A5E8A840091F3C4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5C52883F2A5E93460091F3C4 /* GridCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCVCell.swift; sourceTree = "<group>"; };
+		5CCA66712A641307007A76B6 /* SingleDayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDayVC.swift; sourceTree = "<group>"; };
+		5CCA66732A641311007A76B6 /* SingleDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +87,9 @@
 		5C3B5C362A62C36200D4086C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				5C3B5C442A62C79500D4086C /* AddGoal */,
-				5C3B5C3E2A62C47E00D4086C /* AllGoals */,
+				5CCA66702A6412E5007A76B6 /* SingleDay */,
+				5C3B5C442A62C79500D4086C /* AddHabit */,
+				5C3B5C3E2A62C47E00D4086C /* AllHabits */,
 				5C3B5C3F2A62C4A500D4086C /* Tabs */,
 			);
 			path = Modules;
@@ -137,13 +142,13 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		5C3B5C3E2A62C47E00D4086C /* AllGoals */ = {
+		5C3B5C3E2A62C47E00D4086C /* AllHabits */ = {
 			isa = PBXGroup;
 			children = (
-				5C3B5C402A62C4BA00D4086C /* AllGoalsVC.swift */,
-				5C3B5C422A62C4C500D4086C /* AllGoalsView.swift */,
+				5C3B5C402A62C4BA00D4086C /* AllHabitsVC.swift */,
+				5C3B5C422A62C4C500D4086C /* AllHabitsView.swift */,
 			);
-			path = AllGoals;
+			path = AllHabits;
 			sourceTree = "<group>";
 		};
 		5C3B5C3F2A62C4A500D4086C /* Tabs */ = {
@@ -158,13 +163,13 @@
 			path = Tabs;
 			sourceTree = "<group>";
 		};
-		5C3B5C442A62C79500D4086C /* AddGoal */ = {
+		5C3B5C442A62C79500D4086C /* AddHabit */ = {
 			isa = PBXGroup;
 			children = (
-				5C3B5C452A62C7AC00D4086C /* AddGoalView.swift */,
-				5C3B5C492A62C7C300D4086C /* AddGoalVC.swift */,
+				5C3B5C452A62C7AC00D4086C /* AddHabitView.swift */,
+				5C3B5C492A62C7C300D4086C /* AddHabitVC.swift */,
 			);
-			path = AddGoal;
+			path = AddHabit;
 			sourceTree = "<group>";
 		};
 		5C5287E52A5D55A90091F3C4 = {
@@ -204,6 +209,15 @@
 				5C52883B2A5DC6BD0091F3C4 /* CalSans-SemiBold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5CCA66702A6412E5007A76B6 /* SingleDay */ = {
+			isa = PBXGroup;
+			children = (
+				5CCA66712A641307007A76B6 /* SingleDayVC.swift */,
+				5CCA66732A641311007A76B6 /* SingleDayView.swift */,
+			);
+			path = SingleDay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,25 +292,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C3B5C322A61497900D4086C /* GenericVC.swift in Sources */,
-				5C3B5C432A62C4C500D4086C /* AllGoalsView.swift in Sources */,
+				5C3B5C432A62C4C500D4086C /* AllHabitsView.swift in Sources */,
 				5C5288332A5D93A20091F3C4 /* AllDaysView.swift in Sources */,
 				5C52881E2A5D6DBC0091F3C4 /* Coordinator.swift in Sources */,
 				5C5288282A5D73A40091F3C4 /* TodayVC.swift in Sources */,
 				5C52881C2A5D6D8B0091F3C4 /* MainCoordinator.swift in Sources */,
 				5C3B5C352A61801B00D4086C /* TabBarCoordinator.swift in Sources */,
+				5CCA66742A641311007A76B6 /* SingleDayView.swift in Sources */,
 				5C5288392A5DC46B0091F3C4 /* Constraints.swift in Sources */,
 				5C5287F22A5D55A90091F3C4 /* AppDelegate.swift in Sources */,
-				5C3B5C462A62C7AC00D4086C /* AddGoalView.swift in Sources */,
+				5C3B5C462A62C7AC00D4086C /* AddHabitView.swift in Sources */,
 				5C5288402A5E93460091F3C4 /* GridCVCell.swift in Sources */,
 				5C5288242A5D72C40091F3C4 /* TabBarVC.swift in Sources */,
 				5C5287F42A5D55A90091F3C4 /* SceneDelegate.swift in Sources */,
 				5C52883E2A5E8A840091F3C4 /* Extensions.swift in Sources */,
-				5C3B5C412A62C4BA00D4086C /* AllGoalsVC.swift in Sources */,
-				5C3B5C4A2A62C7C300D4086C /* AddGoalVC.swift in Sources */,
+				5C3B5C412A62C4BA00D4086C /* AllHabitsVC.swift in Sources */,
+				5C3B5C4A2A62C7C300D4086C /* AddHabitVC.swift in Sources */,
 				5C5288262A5D73990091F3C4 /* AllDaysVC.swift in Sources */,
 				5C5288352A5D93AE0091F3C4 /* TodayView.swift in Sources */,
 				5C52882A2A5D73AC0091F3C4 /* SettingsVC.swift in Sources */,
 				5C5288372A5D93B60091F3C4 /* SettingsView.swift in Sources */,
+				5CCA66722A641307007A76B6 /* SingleDayVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

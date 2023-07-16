@@ -10,18 +10,19 @@ import UIKit
 class GridCVCell: UICollectionViewCell {
     static let identifier = "GridCVCell"
     
-    private let button: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(named: "accent-color")
-        button.layer.cornerRadius = 13
-        button.layer.borderColor = UIColor.white.cgColor
-        button.layer.borderWidth = 0.1
-        return button
+    private let view: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(named: "accent-color")
+        view.layer.cornerRadius = 13
+        view.layer.borderColor = UIColor.white.cgColor
+        view.layer.borderWidth = 0.1
+        return view
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.addSubview(button)
+        contentView.isUserInteractionEnabled = true
+        contentView.addSubview(view)
     }
     
     required init?(coder: NSCoder) {
@@ -30,7 +31,7 @@ class GridCVCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        button.frame = contentView.bounds
+        view.frame = contentView.bounds
     }
     
     override func prepareForReuse() {

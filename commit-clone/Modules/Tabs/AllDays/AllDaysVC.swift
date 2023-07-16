@@ -14,9 +14,9 @@ class AllDaysVC: GenericVC<AllDaysView> & Coordinating {
         super.viewDidLoad()
     
         setupBarButtons()
+        rootView.collectionView.isUserInteractionEnabled = true
         rootView.collectionView.dataSource = self
         rootView.collectionView.delegate = self
-        
     }
 
     private func setupBarButtons() {
@@ -48,5 +48,9 @@ extension AllDaysVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GridCVCell.identifier, for: indexPath)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        coordinator?.eventOccured(with: .specificDayTapped)
     }
 }
