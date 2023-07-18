@@ -27,13 +27,7 @@ extension LoginVC: LoginViewDelegate {
         let user = Auth.auth().currentUser
         
         if user != nil {
-//            do {
-//              try Auth.auth().signOut()
-//            } catch let signOutError as NSError {
-//              print("Error signing out: %@", signOutError)
-//            }
-//            print("signed out")
-            
+            coordinator?.eventOccured(with: .loggedIn)
         } else {
             guard let clientID = FirebaseApp.app()?.options.clientID else { return }
                     
@@ -57,7 +51,7 @@ extension LoginVC: LoginViewDelegate {
                 
                 
                 Auth.auth().signIn(with: credential) { authResult, error in
-                    print("auth")
+                    self.coordinator?.eventOccured(with: .loggedIn)
                 }
             }
         }

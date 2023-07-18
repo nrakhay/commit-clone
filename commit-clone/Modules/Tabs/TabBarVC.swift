@@ -30,7 +30,27 @@ class TabBarVC: UITabBarController, Coordinating {
         view.backgroundColor = UIColor(named: "background-color")
         
         configureTabBar()
+        setupBarButtons()
         self.delegate = self
+    }
+    
+    func setupBarButtons() {
+        navigationItem.leftBarButtonItem = leftBarButton
+        navigationItem.rightBarButtonItem = rightBarButton
+        
+        leftBarButton.target = self
+        leftBarButton.action = #selector(allGoalsTapped)
+
+        rightBarButton.target = self
+        rightBarButton.action = #selector(addGoalTapped)
+    }
+    
+    @objc private func allGoalsTapped() {
+        coordinator?.eventOccured(with: .allGoalsTapped)
+    }
+    
+    @objc private func addGoalTapped() {
+        
     }
     
     func configureTabBar() {
@@ -75,8 +95,7 @@ extension TabBarVC: UITabBarControllerDelegate {
             navigationItem.leftBarButtonItem = nil
             navigationItem.rightBarButtonItem = nil
         } else {
-            navigationItem.leftBarButtonItem = leftBarButton
-            navigationItem.rightBarButtonItem = rightBarButton
+            setupBarButtons()
         }
         
         for x in 0..<images.count {

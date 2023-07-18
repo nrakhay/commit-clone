@@ -28,6 +28,11 @@ class AuthCoordinator: Coordinator {
     }
     
     func eventOccured(with type: Event) {
-        
+        switch type {
+        case .loggedIn:
+            parentCoordinator?.eventOccured(with: .loggedIn)
+        default:
+            return
+        }
     }
 }

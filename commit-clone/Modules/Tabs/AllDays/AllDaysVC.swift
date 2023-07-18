@@ -13,30 +13,11 @@ class AllDaysVC: GenericVC<AllDaysView> & Coordinating {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        setupBarButtons()
         rootView.collectionView.dataSource = self
         rootView.collectionView.delegate = self
-        
     }
 
-    func setupBarButtons() {
-        self.tabBarController?.navigationItem.leftBarButtonItem = rootView.leftBarButton
-        self.tabBarController?.navigationItem.rightBarButtonItem = rootView.rightBarButton
 
-        rootView.leftBarButton.target = self
-        rootView.leftBarButton.action = #selector(allGoalsTapped)
-
-        rootView.rightBarButton.target = self
-        rootView.rightBarButton.action = #selector(addGoalTapped)
-    }
-    
-    @objc private func allGoalsTapped() {
-        coordinator?.eventOccured(with: .allGoalsTapped)
-    }
-    
-    @objc private func addGoalTapped() {
-        
-    }
 }
 
 extension AllDaysVC: UICollectionViewDelegate, UICollectionViewDataSource {

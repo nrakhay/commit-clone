@@ -56,6 +56,11 @@ class TabBarCoordinator: Coordinator {
             var vc: UIViewController & Coordinating = SingleDayVC()
             vc.coordinator = self
             navController.pushViewController(vc, animated: true)
+        case .loggedOut:
+            navController.popViewController(animated: false)
+            parentCoordinator?.eventOccured(with: .loggedOut)
+        default:
+            return
         }
     }
 }

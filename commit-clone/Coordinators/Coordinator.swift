@@ -11,6 +11,8 @@ enum Event {
     case allGoalsTapped
     case addGoalTapped
     case specificDayTapped
+    case loggedOut
+    case loggedIn
 }
 
 protocol Coordinator: AnyObject {

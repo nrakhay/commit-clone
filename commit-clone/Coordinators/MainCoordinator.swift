@@ -18,12 +18,12 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-//        if Auth.auth().currentUser == nil {
-//            goToAuth()
-//        } else {
-//            goToHome()
-//        }
-        goToAuth()
+        if Auth.auth().currentUser == nil {
+            goToAuth()
+        } else {
+            goToHome()
+        }
+//        goToAuth()
     }
     
     func goToAuth() {
@@ -43,7 +43,15 @@ class MainCoordinator: Coordinator {
     }
     
     func eventOccured(with type: Event) {
-        return
+        switch type {
+        case .loggedOut:
+            navController.popViewController(animated: false)
+        case .loggedIn:
+            navController.popViewController(animated: false)
+            goToHome()
+        default:
+            return
+        }
     }
     
     func popVC() {

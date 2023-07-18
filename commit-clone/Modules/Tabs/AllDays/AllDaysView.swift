@@ -8,18 +8,6 @@
 import UIKit
 
 class AllDaysView: UIView {
-    let leftBarButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.circle"), style: .plain, target: nil, action: nil)
-        button.tintColor = .white
-        return button
-    }()
-    
-    let rightBarButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: UIImage(systemName: "plus.circle"), style: .plain, target: nil, action: nil)
-        button.tintColor = .white
-        return button
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         

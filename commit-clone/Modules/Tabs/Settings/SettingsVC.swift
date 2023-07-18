@@ -6,13 +6,27 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsVC: GenericVC<SettingsView>, Coordinating {
     var coordinator: Coordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "background-color")
+        rootView.delegate = self
+        navigationItem.hidesBackButton = true
     }
     
+}
+
+extension SettingsVC: SettingsViewDelegate {
+    func logoutTapped() {
+        do {
+          try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
+        
+        coordinator?.eventOccured(with: .loggedOut)
+    }
 }
