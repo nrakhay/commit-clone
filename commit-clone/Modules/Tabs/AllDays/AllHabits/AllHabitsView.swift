@@ -11,7 +11,7 @@ class AllHabitsView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.addSubviews(header)
+        addSubviews(header)
         setupView()
     }
     

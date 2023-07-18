@@ -8,10 +8,26 @@
 import UIKit
 
 class AllDaysView: UIView {
+    let leftBarButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.circle"), style: .plain, target: nil, action: nil)
+        button.tintColor = .white
+        return button
+    }()
+    
+    let rightBarButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "plus.circle"), style: .plain, target: nil, action: nil)
+        button.tintColor = .white
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
-        self.addSubviews(header, collectionView)
+        addSubviews(
+            header,
+            collectionView
+        )
+        
         setupView()
         setupCollectionView()
     }
@@ -37,18 +53,6 @@ class AllDaysView: UIView {
         label.font = UIFont(name: "CalSans-SemiBold", size: 42)
         label.textColor = .white
         return label
-    }()
-    
-    let leftBarButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.circle"), style: .plain, target: nil, action: nil)
-        button.tintColor = .white
-        return button
-    }()
-    
-    let rightBarButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: UIImage(systemName: "plus.circle"), style: .plain, target: nil, action: nil)
-        button.tintColor = .white
-        return button
     }()
     
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
@@ -17,11 +18,20 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-//        var vc: UIViewController & Coordinating = TabBarVC()
-//        vc.coordinator = self
-//        navController?.pushViewController(vc, animated: false)
-        goToHome()
-        
+//        if Auth.auth().currentUser == nil {
+//            goToAuth()
+//        } else {
+//            goToHome()
+//        }
+        goToAuth()
+    }
+    
+    func goToAuth() {
+        let authCoordinator = AuthCoordinator.init(navigationController: navController)
+        children.removeAll()
+        children.append(authCoordinator)
+        authCoordinator.parentCoordinator = self
+        authCoordinator.start()
     }
     
     func goToHome() {
