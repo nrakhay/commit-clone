@@ -17,9 +17,9 @@ class TabBarCoordinator: Coordinator {
         self.navController = navigationController
     }
     
+    let tabVC = TabBarVC()
+    
     func start() {
-        let vc = TabBarVC()
-        
         let allDaysVC = AllDaysVC()
         allDaysVC.title = "all"
         allDaysVC.coordinator = self
@@ -32,10 +32,10 @@ class TabBarCoordinator: Coordinator {
         settingsVC.title = "settings"
         settingsVC.coordinator = self
         
-        vc.setupVC(with: [allDaysVC, todayVC, settingsVC])
+        tabVC.setupVC(with: [allDaysVC, todayVC, settingsVC])
         
-        vc.coordinator = self
-        navController.pushViewController(vc, animated: false)
+        tabVC.coordinator = self
+        navController.pushViewController(tabVC, animated: false)
     }
     
     func popVC() {
@@ -57,7 +57,6 @@ class TabBarCoordinator: Coordinator {
             vc.coordinator = self
             navController.pushViewController(vc, animated: true)
         case .loggedOut:
-            navController.popViewController(animated: false)
             parentCoordinator?.eventOccured(with: .loggedOut)
         default:
             return

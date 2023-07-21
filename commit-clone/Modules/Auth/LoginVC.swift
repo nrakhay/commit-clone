@@ -11,13 +11,14 @@ import GoogleSignIn
 import Firebase
 
 
+
 class LoginVC: GenericVC<LoginView> & Coordinating {
     var coordinator: Coordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         rootView.delegate = self
-        
+        navigationItem.hidesBackButton = true
     }
     
 }

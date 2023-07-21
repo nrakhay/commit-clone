@@ -16,16 +16,17 @@ class SettingsVC: GenericVC<SettingsView>, Coordinating {
         rootView.delegate = self
         navigationItem.hidesBackButton = true
     }
-    
 }
 
 extension SettingsVC: SettingsViewDelegate {
     func logoutTapped() {
         do {
-          try Auth.auth().signOut()
+            try Auth.auth().signOut()
+            print("logged out")
         } catch let signOutError as NSError {
-          print("Error signing out: %@", signOutError)
+            print("Error signing out: %@", signOutError)
         }
+        
         
         coordinator?.eventOccured(with: .loggedOut)
     }

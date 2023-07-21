@@ -43,6 +43,7 @@
 		5CA34FE52A669EE0006116DB /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA34FE42A669EE0006116DB /* FirebaseFirestoreSwift */; };
 		5CA34FE82A669F3E006116DB /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA34FE72A669F3E006116DB /* GoogleSignIn */; };
 		5CA34FEA2A669F3E006116DB /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA34FE92A669F3E006116DB /* GoogleSignInSwift */; };
+		5CA34FED2A694C20006116DB /* DayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA34FEC2A694C20006116DB /* DayButton.swift */; };
 		5CCA66722A641307007A76B6 /* SingleDayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA66712A641307007A76B6 /* SingleDayVC.swift */; };
 		5CCA66742A641311007A76B6 /* SingleDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA66732A641311007A76B6 /* SingleDayView.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		5CA34FD32A669621006116DB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5CA34FD52A66962D006116DB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5CA34FD72A66963D006116DB /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		5CA34FEC2A694C20006116DB /* DayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButton.swift; sourceTree = "<group>"; };
 		5CCA66712A641307007A76B6 /* SingleDayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDayVC.swift; sourceTree = "<group>"; };
 		5CCA66732A641311007A76B6 /* SingleDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,6 +220,7 @@
 		5C5287F02A5D55A90091F3C4 /* commit-clone */ = {
 			isa = PBXGroup;
 			children = (
+				5CA34FEB2A694BFB006116DB /* Components */,
 				5CA34FC32A668DC2006116DB /* GoogleService-Info.plist */,
 				5C5287F12A5D55A90091F3C4 /* AppDelegate.swift */,
 				5C5287F32A5D55A90091F3C4 /* SceneDelegate.swift */,
@@ -247,6 +250,14 @@
 				5CA34FD72A66963D006116DB /* AuthCoordinator.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		5CA34FEB2A694BFB006116DB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5CA34FEC2A694C20006116DB /* DayButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		5CCA66702A6412E5007A76B6 /* SingleDay */ = {
@@ -355,6 +366,7 @@
 				5C3B5C352A61801B00D4086C /* TabBarCoordinator.swift in Sources */,
 				5CCA66742A641311007A76B6 /* SingleDayView.swift in Sources */,
 				5CA34FD62A66962D006116DB /* LoginVC.swift in Sources */,
+				5CA34FED2A694C20006116DB /* DayButton.swift in Sources */,
 				5C5288392A5DC46B0091F3C4 /* Constraints.swift in Sources */,
 				5CA34FC22A653CB3006116DB /* SingleDayTVCell.swift in Sources */,
 				5C5287F22A5D55A90091F3C4 /* AppDelegate.swift in Sources */,

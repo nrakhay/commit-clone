@@ -31,6 +31,7 @@ class TabBarVC: UITabBarController, Coordinating {
         
         configureTabBar()
         setupBarButtons()
+        navigationItem.hidesBackButton = true
         self.delegate = self
     }
     
@@ -50,7 +51,7 @@ class TabBarVC: UITabBarController, Coordinating {
     }
     
     @objc private func addGoalTapped() {
-        
+        coordinator?.eventOccured(with: .addGoalTapped)
     }
     
     func configureTabBar() {
@@ -84,6 +85,12 @@ class TabBarVC: UITabBarController, Coordinating {
         } else {
             items[index].image = UIImage(systemName: images[index].0)
         }
+    }
+}
+
+extension TabBarVC: SettingsViewDelegate {
+    func logoutTapped() {
+        setViewControllers(nil, animated: true)
     }
 }
 

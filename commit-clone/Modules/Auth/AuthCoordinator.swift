@@ -7,8 +7,15 @@
 
 import UIKit
 
+typealias Callback = () -> Void
+
+enum AuthCoordinatorStatus {
+    case
+}
 class AuthCoordinator: Coordinator {
     var navController: UINavigationController
+    
+    var onFlowDidFinish: Callback?
     
     var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
@@ -30,6 +37,7 @@ class AuthCoordinator: Coordinator {
     func eventOccured(with type: Event) {
         switch type {
         case .loggedIn:
+            popVC()
             parentCoordinator?.eventOccured(with: .loggedIn)
         default:
             return

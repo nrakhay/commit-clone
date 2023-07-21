@@ -23,11 +23,10 @@ class MainCoordinator: Coordinator {
         } else {
             goToHome()
         }
-//        goToAuth()
     }
     
     func goToAuth() {
-        let authCoordinator = AuthCoordinator.init(navigationController: navController)
+        let authCoordinator = AuthCoordinator(navigationController: navController)
         children.removeAll()
         children.append(authCoordinator)
         authCoordinator.parentCoordinator = self
@@ -45,9 +44,8 @@ class MainCoordinator: Coordinator {
     func eventOccured(with type: Event) {
         switch type {
         case .loggedOut:
-            navController.popViewController(animated: false)
+            goToAuth()
         case .loggedIn:
-            navController.popViewController(animated: false)
             goToHome()
         default:
             return

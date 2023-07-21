@@ -16,8 +16,6 @@ class AllDaysVC: GenericVC<AllDaysView> & Coordinating {
         rootView.collectionView.dataSource = self
         rootView.collectionView.delegate = self
     }
-
-
 }
 
 extension AllDaysVC: UICollectionViewDelegate, UICollectionViewDataSource {
