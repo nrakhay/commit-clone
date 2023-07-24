@@ -7,9 +7,7 @@
 
 import UIKit
 
-class AllDaysVC: GenericVC<AllDaysView> & Coordinating {
-    var coordinator: Coordinator?
-    
+class AllDaysVC: GenericVC<AllDaysView> {
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -30,6 +28,5 @@ extension AllDaysVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        coordinator?.eventOccured(with: .specificDayTapped)
     }
 }

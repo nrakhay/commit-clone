@@ -7,8 +7,7 @@
 
 import UIKit
 
-class AllHabitsVC: GenericVC<AllHabitsView> & Coordinating {
-    var coordinator: Coordinator?
+class AllHabitsVC: GenericVC<AllHabitsView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +27,7 @@ class AllHabitsVC: GenericVC<AllHabitsView> & Coordinating {
     }
     
     @objc private func backTapped() {
-        coordinator?.popVC()
+        
     }
     
     @objc private func editTapped() {

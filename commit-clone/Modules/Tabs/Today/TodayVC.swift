@@ -7,8 +7,7 @@
 
 import UIKit
 
-class TodayVC: GenericVC<TodayView>, Coordinating {
-    var coordinator: Coordinator?
+class TodayVC: GenericVC<TodayView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +20,7 @@ class TodayVC: GenericVC<TodayView>, Coordinating {
     }
     
     @objc private func backTapped() {
-        coordinator?.popVC()
+        
     }
 }
 

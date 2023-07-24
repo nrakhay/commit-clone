@@ -7,8 +7,8 @@
 
 import UIKit
 
-class TabBarVC: UITabBarController, Coordinating {
-    var coordinator: Coordinator?
+class TabBarVC: UITabBarController {
+
     private let images = [("square.grid.3x3", "square.grid.3x3.fill"),
                           ("square", "square.fill"),
                           ("gearshape", "gearshape.fill")]
@@ -47,11 +47,11 @@ class TabBarVC: UITabBarController, Coordinating {
     }
     
     @objc private func allGoalsTapped() {
-        coordinator?.eventOccured(with: .allGoalsTapped)
+        
     }
     
     @objc private func addGoalTapped() {
-        coordinator?.eventOccured(with: .addGoalTapped)
+        
     }
     
     func configureTabBar() {

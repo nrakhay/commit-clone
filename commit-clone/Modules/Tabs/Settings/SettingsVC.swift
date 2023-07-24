@@ -8,8 +8,12 @@
 import UIKit
 import Firebase
 
-class SettingsVC: GenericVC<SettingsView>, Coordinating {
-    var coordinator: Coordinator?
+protocol SettingsVCProtocol: AnyObject {
+    var onLogout: (Callback)? { get set }
+}
+
+class SettingsVC: GenericVC<SettingsView>, SettingsVCProtocol {
+    var onLogout: Callback?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +26,13 @@ extension SettingsVC: SettingsViewDelegate {
     func logoutTapped() {
         do {
             try Auth.auth().signOut()
-            print("logged out")
+            
+            
+            
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
         }
         
-        
-        coordinator?.eventOccured(with: .loggedOut)
+        self.onLogout?()
     }
 }

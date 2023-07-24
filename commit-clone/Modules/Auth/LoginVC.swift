@@ -10,10 +10,13 @@ import FirebaseAuth
 import GoogleSignIn
 import Firebase
 
+protocol LoginVCProtocol: AnyObject {
+    var onLogin: Callback? { get set }
+}
 
-
-class LoginVC: GenericVC<LoginView> & Coordinating {
-    var coordinator: Coordinator?
+class LoginVC: GenericVC<LoginView>, LoginVCProtocol {
+    
+    var onLogin: Callback?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +31,7 @@ extension LoginVC: LoginViewDelegate {
         let user = Auth.auth().currentUser
         
         if user != nil {
-            coordinator?.eventOccured(with: .loggedIn)
+            self.onLogin?()
         } else {
             guard let clientID = FirebaseApp.app()?.options.clientID else { return }
                     
@@ -52,7 +55,11 @@ extension LoginVC: LoginViewDelegate {
                 
                 
                 Auth.auth().signIn(with: credential) { authResult, error in
-                    self.coordinator?.eventOccured(with: .loggedIn)
+                    if let error = error {
+                        print(error)
+                    } else {
+                        self.onLogin?()
+                    }
                 }
             }
         }
