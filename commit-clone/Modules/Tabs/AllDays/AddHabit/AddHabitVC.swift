@@ -7,7 +7,13 @@
 
 import UIKit
 
-class AddHabitVC: GenericVC<AddHabitView> {
+protocol AddHabitVCProtocol {
+    var onCancelTapped: Callback? { get set }
+}
+
+class AddHabitVC: GenericVC<AddHabitView>, AddHabitVCProtocol {
+    var onCancelTapped: Callback?
+    
     private var daySelected = ["mon": false,
                                "tue": false,
                                "wed": false,
@@ -68,7 +74,7 @@ class AddHabitVC: GenericVC<AddHabitView> {
     }
     
     @objc private func cancelTapped() {
-        
+        self.onCancelTapped?()
     }
 
 }

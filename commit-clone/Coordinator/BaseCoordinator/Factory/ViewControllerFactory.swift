@@ -36,8 +36,8 @@ class ViewControllerFactory {
         return vc
     }
     
-    func initAllHabitsVC() -> SettingsVC {
-        let vc = SettingsVC()
+    func initAllHabitsVC() -> AllHabitsVC {
+        let vc = AllHabitsVC()
         return vc
     }
     

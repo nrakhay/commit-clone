@@ -41,11 +41,11 @@ class AllDaysVC: GenericVC<AllDaysView>, AllDaysVCProtocol {
     }
     
     @objc private func allGoalsTapped() {
-        
+        self.onAllHabits?()
     }
     
     @objc private func addGoalTapped() {
-        
+        self.onAddHabit?()
     }
 }
 

@@ -21,10 +21,36 @@ class AllDaysCoordinator: BaseCoordinator, CoordinatorFinishOutput {
     //MARK: - Private Methods
     
     private func showAllDaysVC(vc: AllDaysVC) {
-        let vc = self.viewControllerFactory.initAllDaysVC()
+        vc.onAllHabits = { [unowned self] in
+            self.showAllHabitsVC()
+            
+        }
         
+        vc.onAddHabit = { [unowned self] in
+            self.showAddHabitVC()
+        }
         
         self.router.setRootModule(vc)
+    }
+    
+    private func showAllHabitsVC() {
+        let vc = viewControllerFactory.initAllHabitsVC()
+        
+        vc.onBackTapped = { [unowned self] in
+            self.router.popModule()
+        }
+        
+        self.router.push(vc)
+    }
+    
+    private func showAddHabitVC() {
+        let vc = viewControllerFactory.initAddHabitVC()
+        
+        vc.onCancelTapped = { [unowned self] in
+            self.router.popModule()
+        }
+        
+        self.router.push(vc)
     }
     
     //MARK: - Coordinator
