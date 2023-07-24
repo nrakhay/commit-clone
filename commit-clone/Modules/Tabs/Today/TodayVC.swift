@@ -7,8 +7,7 @@
 
 import UIKit
 
-class TodayVC: GenericVC<TodayView>, Coordinating {
-    var coordinator: Coordinator?
+class TodayVC: GenericVC<TodayView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +19,12 @@ class TodayVC: GenericVC<TodayView>, Coordinating {
         rootView.tableView.dataSource = self
     }
     
-    @objc private func backTapped() {
-        coordinator?.popVC()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.navigationItem.leftBarButtonItem = nil
+        self.tabBarController?.navigationItem.rightBarButtonItem = nil
     }
+    
 }
 
 extension TodayVC: UITableViewDelegate, UITableViewDataSource {

@@ -7,8 +7,12 @@
 
 import UIKit
 
-class AddHabitVC: GenericVC<AddHabitView> & Coordinating {
-    var coordinator: Coordinator?
+protocol AddHabitVCProtocol {
+    var onCancelTapped: Callback? { get set }
+}
+
+class AddHabitVC: GenericVC<AddHabitView>, AddHabitVCProtocol {
+    var onCancelTapped: Callback?
     
     private var daySelected = ["mon": false,
                                "tue": false,
@@ -65,8 +69,12 @@ class AddHabitVC: GenericVC<AddHabitView> & Coordinating {
     }
     
     
+    @objc private func everyOtherDayTapped() {
+        
+    }
+    
     @objc private func cancelTapped() {
-        coordinator?.popVC()
+        self.onCancelTapped?()
     }
 
 }

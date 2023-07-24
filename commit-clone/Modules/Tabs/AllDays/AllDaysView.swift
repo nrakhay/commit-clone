@@ -43,6 +43,18 @@ class AllDaysView: UIView {
         return label
     }()
     
+    let leftBarButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.circle"), style: .plain, target: nil, action: nil)
+        button.tintColor = .white
+        return button
+    }()
+    
+    let rightBarButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "plus.circle"), style: .plain, target: nil, action: nil)
+        button.tintColor = .white
+        return button
+    }()
+    
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
     private func setupCollectionView() {

@@ -7,9 +7,8 @@
 
 import UIKit
 
-class SingleDayVC: GenericVC<SingleDayView>, Coordinating {
-    var coordinator: Coordinator?
-    
+class SingleDayVC: GenericVC<SingleDayView> {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBarButton()
@@ -28,7 +27,6 @@ class SingleDayVC: GenericVC<SingleDayView>, Coordinating {
     }
     
     @objc private func backTapped() {
-        coordinator?.popVC()
     }
 }
 

@@ -7,8 +7,12 @@
 
 import UIKit
 
-class AllHabitsVC: GenericVC<AllHabitsView> & Coordinating {
-    var coordinator: Coordinator?
+protocol AllHabitsVCProtocol {
+    var onBackTapped: Callback? { get set }
+}
+
+class AllHabitsVC: GenericVC<AllHabitsView>, AllHabitsVCProtocol {
+    var onBackTapped: Callback?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +32,11 @@ class AllHabitsVC: GenericVC<AllHabitsView> & Coordinating {
     }
     
     @objc private func backTapped() {
-        coordinator?.popVC()
+        self.onBackTapped?()
     }
     
     @objc private func editTapped() {
-        
+
     }
 
 }
