@@ -23,6 +23,7 @@ class AllDaysCoordinator: BaseCoordinator, CoordinatorFinishOutput {
     private func showAllDaysVC(vc: AllDaysVC) {
         let vc = self.viewControllerFactory.initAllDaysVC()
         
+        
         self.router.setRootModule(vc)
     }
     

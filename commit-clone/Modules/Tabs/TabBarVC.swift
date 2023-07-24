@@ -8,50 +8,18 @@
 import UIKit
 
 class TabBarVC: UITabBarController {
-
+    
     private let images = [("square.grid.3x3", "square.grid.3x3.fill"),
                           ("square", "square.fill"),
                           ("gearshape", "gearshape.fill")]
-    
-    let leftBarButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.circle"), style: .plain, target: nil, action: nil)
-        button.tintColor = .white
-        return button
-    }()
-    
-    let rightBarButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: UIImage(systemName: "plus.circle"), style: .plain, target: nil, action: nil)
-        button.tintColor = .white
-        return button
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "background-color")
         
         configureTabBar()
-        setupBarButtons()
         navigationItem.hidesBackButton = true
         self.delegate = self
-    }
-    
-    func setupBarButtons() {
-        navigationItem.leftBarButtonItem = leftBarButton
-        navigationItem.rightBarButtonItem = rightBarButton
-        
-        leftBarButton.target = self
-        leftBarButton.action = #selector(allGoalsTapped)
-
-        rightBarButton.target = self
-        rightBarButton.action = #selector(addGoalTapped)
-    }
-    
-    @objc private func allGoalsTapped() {
-        
-    }
-    
-    @objc private func addGoalTapped() {
-        
     }
     
     func configureTabBar() {
@@ -88,22 +56,9 @@ class TabBarVC: UITabBarController {
     }
 }
 
-extension TabBarVC: SettingsViewDelegate {
-    func logoutTapped() {
-        setViewControllers(nil, animated: true)
-    }
-}
-
 extension TabBarVC: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         let tabBarIndex = tabBarController.selectedIndex
-        
-        if tabBarIndex == 1 || tabBarIndex == 2 {
-            navigationItem.leftBarButtonItem = nil
-            navigationItem.rightBarButtonItem = nil
-        } else {
-            setupBarButtons()
-        }
         
         for x in 0..<images.count {
             if tabBarIndex == x {

@@ -19,9 +19,12 @@ class TodayVC: GenericVC<TodayView> {
         rootView.tableView.dataSource = self
     }
     
-    @objc private func backTapped() {
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.navigationItem.leftBarButtonItem = nil
+        self.tabBarController?.navigationItem.rightBarButtonItem = nil
     }
+    
 }
 
 extension TodayVC: UITableViewDelegate, UITableViewDataSource {

@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Firebase
 
 fileprivate var onboardingWasShown = true
-fileprivate var isAutorized = false
+fileprivate var isAutorized = Auth.auth().currentUser == nil ? false : true
 
 enum LaunchInstructor {
     
